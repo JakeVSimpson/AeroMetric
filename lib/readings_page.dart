@@ -16,6 +16,8 @@ class ReadingsPage extends StatefulWidget {
 //Can you write a function that creates a table that shows the readings from the sensors?
 //
 
+//Why is my screen not scrollable?
+
 class _ReadingsPageState extends State<ReadingsPage>
     with SingleTickerProviderStateMixin {
   @override
@@ -59,7 +61,7 @@ class _ReadingsPageState extends State<ReadingsPage>
                         style: GoogleFonts.montserrat(
                             fontSize: 30, fontWeight: FontWeight.w800)),
                     Divider(
-                      height: 20,
+                      height: 10,
                       thickness: 2,
                       color: Colors.blue,
                       indent: 10000,
@@ -82,11 +84,11 @@ class _ReadingsPageState extends State<ReadingsPage>
                       ),
                     ),
                     Divider(
-                      height: 20,
+                      height: 10,
                       thickness: 2,
                       color: Colors.blue,
-                      indent: 10000,
-                      endIndent: 10000,
+                      indent: 20,
+                      endIndent: 20,
                     ),
                     ListTile(
                       iconColor: Color.fromARGB(255, 55, 147, 245),
@@ -105,7 +107,7 @@ class _ReadingsPageState extends State<ReadingsPage>
                       ),
                     ),
                     Divider(
-                      height: 20,
+                      height: 10,
                       thickness: 2,
                       color: Colors.blue,
                       indent: 20,
@@ -128,7 +130,7 @@ class _ReadingsPageState extends State<ReadingsPage>
                       ),
                     ),
                     Divider(
-                      height: 20,
+                      height: 10,
                       thickness: 2,
                       color: Colors.blue,
                       indent: 2000,
@@ -138,7 +140,7 @@ class _ReadingsPageState extends State<ReadingsPage>
                         style: GoogleFonts.montserrat(
                             fontSize: 30, fontWeight: FontWeight.w800)),
                     Divider(
-                      height: 20,
+                      height: 10,
                       thickness: 2,
                       color: Colors.blue,
                       indent: 2000,
@@ -161,7 +163,7 @@ class _ReadingsPageState extends State<ReadingsPage>
                       ),
                     ),
                     Divider(
-                      height: 20,
+                      height: 10,
                       thickness: 2,
                       color: Colors.blue,
                       indent: 20,
@@ -184,7 +186,7 @@ class _ReadingsPageState extends State<ReadingsPage>
                       ),
                     ),
                     Divider(
-                      height: 20,
+                      height: 10,
                       thickness: 2,
                       color: Colors.blue,
                       indent: 20,
@@ -207,7 +209,7 @@ class _ReadingsPageState extends State<ReadingsPage>
                       ),
                     ),
                     Divider(
-                      height: 20,
+                      height: 10,
                       thickness: 2,
                       color: Colors.blue,
                       indent: 20,
@@ -230,11 +232,102 @@ class _ReadingsPageState extends State<ReadingsPage>
                       ),
                     ),
                     Divider(
-                      height: 20,
+                      height: 10,
                       thickness: 2,
                       color: Colors.blue,
                       indent: 20,
                       endIndent: 20,
+                    ),
+                    // I want to create a table that shows the readings from all the sensors.
+                    ListTile(
+                      iconColor: Color.fromARGB(255, 91, 98, 106),
+                      leading: Icon(Icons.cloud),
+                      contentPadding: EdgeInsets.symmetric(
+                          vertical: 10.0, horizontal: 16.0),
+                      title: Text(
+                        'H2',
+                        style: GoogleFonts.montserrat(
+                            fontSize: 25, fontWeight: FontWeight.w500),
+                      ),
+                      trailing: Text(
+                        'None Detected',
+                        style: GoogleFonts.montserrat(
+                            fontSize: 25, fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                    Divider(
+                      height: 10,
+                      thickness: 2,
+                      color: Colors.blue,
+                      indent: 20,
+                      endIndent: 20,
+                    ),
+                    ListTile(
+                      iconColor: Color.fromARGB(255, 91, 98, 106),
+                      leading: Icon(Icons.cloud),
+                      contentPadding: EdgeInsets.symmetric(
+                          vertical: 10.0, horizontal: 16.0),
+                      title: Text(
+                        'LPG',
+                        style: GoogleFonts.montserrat(
+                            fontSize: 25, fontWeight: FontWeight.w500),
+                      ),
+                      trailing: Text(
+                        'None Detected',
+                        style: GoogleFonts.montserrat(
+                            fontSize: 25, fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                    Divider(
+                      height: 10,
+                      thickness: 2,
+                      color: Colors.blue,
+                      indent: 20,
+                      endIndent: 20,
+                    ),
+                    ListTile(
+                      iconColor: Color.fromARGB(255, 91, 98, 106),
+                      leading: Icon(Icons.cloud),
+                      contentPadding: EdgeInsets.symmetric(
+                          vertical: 10.0, horizontal: 16.0),
+                      title: Text(
+                        'Smoke',
+                        style: GoogleFonts.montserrat(
+                            fontSize: 25, fontWeight: FontWeight.w500),
+                      ),
+                      trailing: Text(
+                        'None Detected',
+                        style: GoogleFonts.montserrat(
+                            fontSize: 25, fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                    //I want to create a button that will take me to the a graphs page.
+
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          PageTransition(
+                            type: PageTransitionType
+                                .fade, // Choose the type of animation you prefer.
+                            child: ReadingsPage(),
+                          ),
+                        );
+                      },
+                      child: Text("View Graphs",
+                          style: GoogleFonts.montserrat(
+                              fontSize: 14, fontWeight: FontWeight.bold)),
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.white,
+                        onPrimary: Colors.blue,
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30.0),
+                        ),
+                        shadowColor: Colors.blueAccent,
+                        elevation: 5,
+                      ),
                     ),
                   ],
                 ),
